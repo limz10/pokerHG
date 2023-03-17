@@ -4,11 +4,13 @@ from database import connect_db
 app = Flask(__name__)
 app.secret_key = 'your_secret_key_here'
 
+
 @app.route('/')
 def index():
     if 'username' in session:
         return 'Logged in as ' + session['username']
     return redirect(url_for('login'))
+
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -28,6 +30,7 @@ def login():
     else:
         return render_template('login.html')
 
+
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
     if request.method == 'POST':
@@ -42,10 +45,12 @@ def signup():
     else:
         return render_template('signup.html')
 
+
 @app.route('/logout')
 def logout():
     session.pop('username', None)
     return redirect(url_for('index'))
+
 
 if __name__ == '__main__':
     app.run(debug=True)
