@@ -11,8 +11,8 @@
       <li aria-current={$page.url.pathname === "/" ? "page" : undefined}>
         <a href="/">Home</a>
       </li>
-      <li aria-current={$page.url.pathname === "/new" ? "page" : undefined}>
-        <a href="/new">New</a>
+      <li aria-current={$page.url.pathname === "/newgame" ? "page" : undefined}>
+        <a href="/newgame">New</a>
       </li>
       <li aria-current={$page.url.pathname === "/saved" ? "page" : undefined}>
         <a href="/saved">Saved</a>
